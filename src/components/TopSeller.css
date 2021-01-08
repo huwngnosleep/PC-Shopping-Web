@@ -1,0 +1,15 @@
+.topsellers-img {
+  max-width: 300px;
+}
+
+.paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginate-btn {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 5px;
+}
