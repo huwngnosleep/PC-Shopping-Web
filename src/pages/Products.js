@@ -5,10 +5,7 @@ import {Link} from 'react-router-dom'
 import {Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, CarouselItem} from 'reactstrap'
 
-import DetailProduct from './DetailProduct'
-
 import Filter from '../components/Filter'
-
 export default class Products extends Component {
   constructor() {
     super()
@@ -418,7 +415,7 @@ export default class Products extends Component {
               <Col className="mt-3" sm="3" style={{borderBottom: "1px solid black", boxSizing: 'border-box'}}>
                 <Link to={{
                   pathname: "/detail-product/",
-                  state: item
+                  item
                 }}>
                   <Card style={{border: 'none', position: 'relative'}}>
                     <CardImg top width="100%" src={item.img} />

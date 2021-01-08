@@ -9,9 +9,27 @@ export default class extends Component {
             inCart: []
         }
     }
+
+    addToCart(item) {
+        this.setState({
+            inCart: this.state.inCart.concat(item)
+        })
+    }
+    delCartItem(item) {
+        let inCart = this.state.inCart
+        let index = inCart.indexOf(item)
+        inCart.splice(index, 1)
+        this.setState({
+            inCart
+        })
+    }
     render() {
         return(
-            <CartContext.Provider value={this.state}>
+            <CartContext.Provider value={{
+                inCart: this.state.inCart,
+                addToCart: this.addToCart.bind(this),
+                delCartItem: this.delCartItem.bind(this),
+            }}>
                 {this.props.children}
             </CartContext.Provider>
         )

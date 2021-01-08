@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 
 import {Container, Row, Col} from 'reactstrap'
 
+import {CartContext} from '../contexts/CartContext'
 export default class DetailProduct extends Component {
   constructor(props) {
     super(props)
   }
   
   render() {
-    const item = this.props.location.state
+    const {item} = this.props.location
     return(
       <Container>
         <Row>
@@ -19,7 +20,9 @@ export default class DetailProduct extends Component {
             <h2>{item.name}</h2>
             <p>{item.productor}</p>
             <h3>{item.price}</h3>
-            <button className="btn btn-block btn-primary">Add to cart</button>            
+            <CartContext.Consumer>
+              {({addToCart}) => <button onClick={() => addToCart(item)} className="btn btn-block btn-primary">Add to cart</button>}
+            </CartContext.Consumer>
           </Col>
           <Col sm="3" className="mt-2 d-flex flex-column justify-content-center">
             <ul className="list-group">

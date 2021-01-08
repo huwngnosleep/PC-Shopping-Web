@@ -16,7 +16,7 @@ import {
 
 import Cart from './Cart'
 
-export default Heading = () => {
+const Heading = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -66,3 +66,5 @@ export default Heading = () => {
     </div>
   );
 }
+
+export default Heading

@@ -22,7 +22,7 @@ const items = [
   }
 ];
 
-export default CarouselIntro = (props) => {
+const CarouselIntro = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -72,3 +72,4 @@ export default CarouselIntro = (props) => {
   );
 };
 
+export default CarouselIntro

@@ -5,16 +5,16 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "bootstrap": "4.5.3",
-    "express": "4.17.1",
-    "react": "17.0.0",
-    "react-dom": "17.0.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.3",
-    "reactstrap": "8.8.1"
+    "bootstrap": "^4.5.3",
+    "express": "^4.17.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "reactstrap": "^8.8.1"
   },
   "devDependencies": {
-    "typescript": "3.8.3"
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
