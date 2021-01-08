@@ -12,8 +12,9 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
 } from 'reactstrap';
+
+import Cart from './Cart'
 
 export default Heading = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +28,7 @@ export default Heading = () => {
           <Link to="/">HuwngNoSleep</Link>
         </NavbarBrand>
         <Link to="/products/">Products</Link>
+        <Cart/>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -60,7 +62,6 @@ export default Heading = () => {
           <NavLink href="/login/">Log in</NavLink>
           <NavLink href="/signup/">Sign up</NavLink>
         </Collapse>
-        
       </Navbar>
     </div>
   );

@@ -1,6 +1,9 @@
 import React from "react";
 import "./styles.css";
 
+// contexts
+import CartProvider from './contexts/CartContext'
+
 // components
 import Heading from "./components/Heading";
 
@@ -19,15 +22,17 @@ import DetailProduct from "./pages/DetailProduct"
 
 export default function App() {
   return (
-    <Router>
-      <div className="App">
-        <Heading />
-      </div>
-      <div>
-        <Route exact path="/detail-product/" component={DetailProduct} />
-        <Route exact path="/products/" component={Products} />
-        <Route exact path="/" component={Home} />
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          <Heading />
+        </div>
+        <div>
+          <Route exact path="/detail-product/" component={DetailProduct} />
+          <Route exact path="/products/" component={Products} />
+          <Route exact path="/" component={Home} />
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
