@@ -81,6 +81,10 @@ nav a:hover {
   opacity: 0;
 }
 
+.top-sellers .card:hover {
+  padding: 0.3rem;
+}
+
 .top-sellers .card:hover .card-text {
   opacity: 1;
   transition: all 0.5s;
