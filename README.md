@@ -4,7 +4,7 @@ Online PC shopping web made of REACTJS, BOOTSTRAP 4, ExpressJS (NodeJS)
 
 Deployed on CodeSanbox
 
-link: https://56cjg.csb.app/
+link: https://vjwhw.csb.app/
 
 API server will be updated later
 
