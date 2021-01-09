@@ -10,10 +10,10 @@ const Cart = (props) => {
   const toggle = () => setTooltipOpen(!tooltipOpen);
 
   return (
-    <div>
+    <a className="m-0">
       <span id="TooltipExample">
         <Link to="/payment/">
-          <ion-icon style={{minWidth: "30px"}} name="cart-outline"></ion-icon>
+          <ion-icon name="cart-outline"></ion-icon>
           <CartContext.Consumer>
             {({inCart}) => <b>{`Cart: ${inCart.length}`}</b>}
           </CartContext.Consumer>
@@ -22,13 +22,14 @@ const Cart = (props) => {
       <Tooltip placement="right" isOpen={tooltipOpen} target="TooltipExample" toggle={toggle}>
         <ul className="list-group">
           <CartContext.Consumer>
-            {({inCart}) => inCart.map(
+            {({inCart}) => inCart.length ? inCart.map(
               (item, index) => <li>{`${index + 1} - ${item.name}`}</li>
-            )}
+            ) : <b>No items in cart yet!</b>} 
           </CartContext.Consumer>
         </ul>
       </Tooltip>
-    </div>
+      
+    </a>
   )
 }
 

@@ -23,44 +23,59 @@ const Heading = () => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand>
+      <Navbar className="fixed-top" color="light" light expand="md">
+        <NavbarBrand className="m-0">
           <Link to="/">HuwngNoSleep</Link>
         </NavbarBrand>
-        <Link to="/products/">Products</Link>
+        <Link className="nav-link m-0 p-0" to={{pathname: "/products/", category: '', brand: ''}}>Products</Link>
         <Cart/>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/best-seller/">Best Seller</NavLink>
-            </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Categories
+                Contact
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
+                  <NavLink href="https://www.facebook.com/huwngnosleep/">FaceBook</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  Option 2
+                  <NavLink href="https://github.com/huwngnosleep">Github</NavLink>
                 </DropdownItem>
-                <DropdownItem divider />
                 <DropdownItem>
-                  Reset
+                  <NavLink href="https://github.com/huwngnosleep/PCShoppingWeb">This project on Github</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavLink href="/login/">Log in</NavLink>
-          <NavLink href="/signup/">Sign up</NavLink>
+        </Collapse>
+      </Navbar>
+      {/* the navbar below is used as before pseudo class */}
+      <Navbar color="light" light expand="md">
+        <NavbarBrand className="m-0">
+          <Link to="/">HuwngNoSleep</Link>
+        </NavbarBrand>
+        <Link className="nav-link m-0 p-0" to={{pathname: "/products/", category: '', brand: ''}}>Products</Link>
+        <Cart/>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Contact
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  <NavLink href="https://www.facebook.com/huwngnosleep/">FaceBook</NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink href="https://github.com/huwngnosleep">Github</NavLink>
+                </DropdownItem>
+                
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
         </Collapse>
       </Navbar>
     </div>

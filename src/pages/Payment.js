@@ -9,35 +9,37 @@ export default class Payment extends Component {
         super(props)
     }
 
+    delItemAlert() {
+        alert('Item has been deleted!')
+    }
     render() {
         return(
-            <Container>
-                
+            <Container className="mt-3">
                 <Row>
                     <Col sm="6">
                         <h2>Cart</h2>
                         <CartContext.Consumer>
-                            {({inCart, delCartItem}) => inCart.map(
+                            {({inCart, delCartItem}) => inCart.length ? inCart.map(
                                 (item) => 
                                     <Row class="card mb-5" style={{maxWidth: "540px"}}>
                                         <div class="row border-bottom g-0">
                                             <div class="col">
-                                                <img class="card border-0 mb-3" style={{width: "100%", maxWidth: "200px"}} src={item.img} />
+                                                <img class="card border-0 mb-3" style={{width: "100%"}} src={item.img} />
                                             </div>
                                             <div class="col">
-                                                <div class="card-body">
+                                                <div class="card-body p-0">
                                                     <h5 class="card-title">{item.name}</h5>
                                                     <p class="card-text">{item.price}</p>
                                                     <p class="card-text"><small class="text-muted">{item.productor}</small></p>
-                                                    <button onClick={() => delCartItem(item)} class="btn btn-danger">Remove<ion-icon name="trash-outline"></ion-icon></button>
+                                                    <button onClick={() => {delCartItem(item); this.delItemAlert()}} class="btn btn-danger">Remove<ion-icon name="trash-outline"></ion-icon></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </Row> 
-                            )}
+                            ) : <h5>You have no items in cart yet!</h5>}
                         </CartContext.Consumer>
                     </Col>
-                    <Col sm="6">
+                    <Col className="pb-3" sm="6">
                         <h2>Payment</h2>
                         <form>
                             <div class="mb-3">
@@ -60,7 +62,7 @@ export default class Payment extends Component {
                                 <label for="exampleFormControlTextarea1" class="form-label">Note</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Addition requirement" rows="3"></textarea>
                             </div>
-                            <button class="btn btn-primary">Confirm</button>
+                            <button class="btn btn-primary btn-block">Confirm</button>
                         </form>
                     </Col>
                 </Row>

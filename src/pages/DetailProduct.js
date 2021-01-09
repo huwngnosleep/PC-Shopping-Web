@@ -8,11 +8,15 @@ export default class DetailProduct extends Component {
     super(props)
   }
   
+  alert() {
+    alert('Added new item to cart!')
+  }
   render() {
     const {item} = this.props.location
     return(
-      <Container>
+      <Container className="pb-3">
         <Row>
+          
           <Col sm="5" className="mt-2 d-flex flex-column justify-content-center">
             <img className="mw-100" src={item.img}/>
           </Col>
@@ -20,8 +24,9 @@ export default class DetailProduct extends Component {
             <h2>{item.name}</h2>
             <p>{item.productor}</p>
             <h3>{item.price}</h3>
+            
             <CartContext.Consumer>
-              {({addToCart}) => <button onClick={() => addToCart(item)} className="btn btn-block btn-primary">Add to cart</button>}
+              {({addToCart}) => <button onClick={() => {addToCart(item); this.alert()}} className="btn btn-block btn-primary">Add to cart</button>}
             </CartContext.Consumer>
           </Col>
           <Col sm="3" className="mt-2 d-flex flex-column justify-content-center">
@@ -35,7 +40,7 @@ export default class DetailProduct extends Component {
           </Col>
         </Row>
         <Row>
-          <ul className="list-group ml-3">
+          <ul className="list-group ml-3">Product detail information:
             {
               item.info.map(prop => <li style={{listStyle: "none"}}>{`- ${prop}`}</li>)
             }

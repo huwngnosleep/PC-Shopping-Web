@@ -50,7 +50,7 @@ const CarouselIntro = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img className="img-responsive" src={item.src} alt={item.altText} />
+        <img className="mw-100" src={item.src} alt={item.altText} />
       </CarouselItem>
     );
   });

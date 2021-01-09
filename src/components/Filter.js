@@ -23,8 +23,8 @@ const Filter = (props) => {
           </DropdownItem>
           <DropdownItem>
               <Button onClick={props.productorClick} type="button" value="Asus">Asus</Button>
-              <Button onClick={props.productorClick} type="button" value="Lenovo">Lenovo</Button>
-              <Button onClick={props.productorClick} type="button" value="Acer">Acer</Button>
+              <Button onClick={props.productorClick} type="button" value="Logitech">Logitech</Button>
+              <Button onClick={props.productorClick} type="button" value="Gigabyte">Gigabyte</Button>
               <Button onClick={props.productorClick} type="button" value="MSI">MSI</Button>
               <Button onClick={props.productorClick} type="button" value="HP">HP</Button>
               <Button onClick={props.productorClick} type="button" value="Intel">Intel</Button>
