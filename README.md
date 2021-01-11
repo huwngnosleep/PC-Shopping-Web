@@ -4,9 +4,9 @@ Online PC shopping web made of REACTJS, BOOTSTRAP 4, ExpressJS (NodeJS)
 
 Deployed on CodeSanbox
 
-link: https://vjwhw.csb.app/
+link: https://vjwhw.csb.app
 
-API server: https://mg5em.sse.codesandbox.io/
+API server: https://mg5em.sse.codesandbox.io
 
 Finished features:
 - By Jan 8, 2021: Basic features of an online shopping web: show products, cart,...
