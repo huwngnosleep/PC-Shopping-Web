@@ -6,7 +6,7 @@ Deployed on CodeSanbox
 
 link: https://vjwhw.csb.app/
 
-API server will be updated later
+API server: https://mg5em.sse.codesandbox.io/products
 
 Finished features:
 - By Jan 8, 2021: Basic features of an online shopping web: show products, cart,...
