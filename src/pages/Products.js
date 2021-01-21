@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 
 import {Link} from 'react-router-dom'
 
-import {Container, Row, Col, Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, CarouselItem} from 'reactstrap'
+import { Container, Row, Col, Card, CardImg, CardText, CardBody,
+  CardTitle } from 'reactstrap'
 
 import Filter from '../components/Filter'
 export default class Products extends Component {

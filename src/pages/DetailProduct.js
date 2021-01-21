@@ -2,17 +2,17 @@ import React, {Component} from 'react'
 
 import {Container, Row, Col} from 'reactstrap'
 
-import {CartContext} from '../contexts/CartContext'
-export default class DetailProduct extends Component {
-  constructor(props) {
-    super(props)
-  }
+import { addItem } from '../redux/cart/cart.actions'
+
+import { connect } from 'react-redux'
+class DetailProduct extends Component {
   
   alert() {
     alert('Added new item to cart!')
   }
   render() {
     const {item} = this.props.location
+    const { addItem } = this.props
     return(
       <Container className="pb-3">
         <Row>
@@ -25,9 +25,7 @@ export default class DetailProduct extends Component {
             <p>{item.productor}</p>
             <h3>{item.price}</h3>
             
-            <CartContext.Consumer>
-              {({addToCart}) => <button onClick={() => {addToCart(item); this.alert()}} className="btn btn-block btn-primary">Add to cart</button>}
-            </CartContext.Consumer>
+            <button onClick={() => addItem(item)} className="btn btn-block btn-primary">Add to cart</button>
           </Col>
           <Col sm="3" className="mt-2 d-flex flex-column justify-content-center">
             <ul className="list-group">
@@ -50,3 +48,11 @@ export default class DetailProduct extends Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: (item) => dispatch(addItem(item))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(DetailProduct)

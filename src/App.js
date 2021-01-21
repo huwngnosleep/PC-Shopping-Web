@@ -1,40 +1,66 @@
-import React from "react";
+import React, { Component } from "react";
 import "./styles.css";
 
-// contexts
-import CartProvider from './contexts/CartContext'
+import { connect } from 'react-redux'
+import { setCurrentUser } from './redux/user/user.actions'
 
-// components
-import Heading from "./components/Heading";
+import { auth } from './firebase/firebase.utils'
 
-//router
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect
 } from "react-router-dom";
 
+import Header from "./pages/home/Header";
+import Footer from "./pages/home/Footer"
 
-// pages
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import DetailProduct from "./pages/DetailProduct"
 import Payment from './pages/Payment'
+import SignIn from './pages/Signin'
 
-export default function App() {
-  return (
-    <CartProvider>
+
+class App extends Component {
+
+  componentDidMount() {
+    const { setCurrentUser } = this.props
+
+    auth.onAuthStateChanged(user => {
+      setCurrentUser(user)
+    }) 
+  }
+
+  render() {
+    return (
       <Router>
         <div className="App">
-          <Heading />
+          <Header />
+          <Footer />
         </div>
-        <div>
-          <Route exact path="/detail-product/" component={DetailProduct} />
-          <Route exact path="/products/" component={Products} />
+        
+        <Switch>
+          <Route exact path="/signin/" render={() => 
+            this.props.currentUser ? <Redirect to="/" /> : <SignIn />
+          } />
+          <Route path="/detail-product/" component={DetailProduct} />
+          <Route path="/products/" component={Products} />
           <Route path="/payment" component={Payment}/>
           <Route exact path="/" component={Home} />
-        </div>
+        </Switch>
       </Router>
-    </CartProvider>
-  );
+    )
+  }
 }
+
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
