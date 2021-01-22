@@ -1,12 +1,13 @@
 A Project to finish basic web fullstack dev course of CodersX
 
-Frontend Project of Ecomerce PC shopping web made of REACTJS, BOOTSTRAP 4
+Frontend Project of Ecomerce PC shopping web made of REACTJS, Redux, BOOTSTRAP 4
 
 Deployed on Heroku
 
-link: https://huwngnosleep-pc-webshop.herokuapp.com/
+link: https://huwng-no-sleep-webshop.herokuapp.com/
 
-API server (just Get Data): https://mg5em.sse.codesandbox.io
+currently not have API server yet!
+so data is hard-coded on client-size
 
 Finished features:
 - By Jan 8, 2021: Basic features of an online shopping web: show products, cart,...
