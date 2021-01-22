@@ -3,6 +3,7 @@ import "./styles.css";
 
 import { connect } from 'react-redux'
 import { setCurrentUser } from './redux/user/user.actions'
+import { loadData } from './redux/data/data.actions'
 
 import { auth } from './firebase/firebase.utils'
 
@@ -56,11 +57,17 @@ class App extends Component {
 }
 
 const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+  currentUser: user.currentUser,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user))
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  loadData: async () => {
+    fetch('https://mg5em.sse.codesandbox.io/')
+      .then(res => res.json())
+      .then(data => {console.log(data); dispatch(loadData(data))})
+  },
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

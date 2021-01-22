@@ -32,6 +32,11 @@ const Payment = ({ cartItems, delItem }) => {
                             </Row> 
                         ) : <h5>You have no items in cart yet!</h5>
                     }
+                    {
+                        cartItems.length ? <p>{`TOTAL: ${cartItems.reduce((total, nextItem) => total + Number(nextItem.price.replace('$', '')), 0)}$`}</p>
+                        : 
+                        null
+                    }
                 </Col>
                 <Col className="pb-3" sm="6">
                     <h2>Payment</h2>
@@ -61,8 +66,7 @@ const Payment = ({ cartItems, delItem }) => {
                 </Col>
             </Row>
         </Container>  
-    ) 
-    
+    )
 }
 
 const mapStateToProps = (state) => {

@@ -92,8 +92,8 @@ class ProductsCategories extends Component {
       <Container id="products-categories">
         <Row>
           {
-            this.state.categories.map(item => (
-              <Col className="mt-3" sm="4">
+            this.state.categories.map((item, index) => (
+              <Col key={index} className="mt-3" sm="4">
                 <div>
                   <Link to={{pathname: "/products/", category: item.title, brand: ''}}>
                     <Card>
@@ -156,8 +156,8 @@ class BestSeller extends Component {
           <h2 className="mb-3">Popular Brands</h2>
           <Row>
             {
-              this.state.popularBrands.map(item => (
-                <Col sm="3">
+              this.state.popularBrands.map((item, index) => (
+                <Col key={index} sm="3">
                   <Link to={{pathname: "/products", category: '', brand: item.name}}>
                     <Card className="text-center">
                       <CardImg Best width="100%" src={item.img}/>
@@ -175,8 +175,8 @@ class BestSeller extends Component {
           <h2 className="m-3">Top Sellars</h2>
           <Row className="text-center">
             {
-              bestSellersVisible.map(item => (
-                <Col sm="3">
+              bestSellersVisible.map((item, index) => (
+                <Col key={index} sm="3">
                   <Link to={{pathname: '/detail-product', item}}>
                     <Card className="text-center h-100">
                         <CardImg top width="100%" src={item.img}/>
