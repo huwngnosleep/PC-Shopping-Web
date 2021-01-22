@@ -5,6 +5,7 @@ import {Container, Row, Col} from 'reactstrap'
 import { addItem } from '../redux/cart/cart.actions'
 
 import { connect } from 'react-redux'
+
 class DetailProduct extends Component {
   
   alert() {
@@ -16,7 +17,6 @@ class DetailProduct extends Component {
     return(
       <Container className="pb-3">
         <Row>
-          
           <Col sm="5" className="mt-2 d-flex flex-column justify-content-center">
             <img className="mw-100" src={item.img}/>
           </Col>

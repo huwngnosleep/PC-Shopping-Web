@@ -42,21 +42,6 @@ export default class Products extends Component {
           "Quạt CPU Gigabyte Aorus ATC700"
         ]
       }, {
-        "name": "E-Dra Hercules EGC203 Pro (Black)",
-        "price": "$98.94",
-        "category": "gear",
-        "productor": "MSI",
-        "img": "https://phongvu.vn/api/products/200500012/default_image",
-        "info": ["CPU Intel Core i5-9400F (9M Cache, up to 4.10GHz)",  
-          "Mainboard Gigabyte B360M Aorus Gaming 3",
-          "RAM Gigabyte AORUS RGB 16GB (2x8) DDR4 3200 (GP-AR32C16S8K2HU416R)",
-          "Card Gigabyte GeForce GTX 1660Ti OC 6G GDDR6 (GV-N166TOC-6GD)",
-          "SSD Gigabyte 2.5 120GB SATA 6Gb/s (GP-GSTFS31120GNTD)",
-          "Power Gigabyte 500W (GP-PB500)",
-          "Case Gigabyte AORUS AC300W LITE",
-          "Quạt CPU Gigabyte Aorus ATC700"
-        ]
-      }, {
         "name": "Laptop ASUS VivoBook 14 A412FA-EK734T (14 FHD/i5-10210U/8GB/512GB SSD/Intel UHD/Win10/1.5kg)",
         "price": "$988.49",
         "category": "laptop",

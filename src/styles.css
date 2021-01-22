@@ -9,7 +9,7 @@
 
 .App {
   font-family: sans-serif;
-  text-align: center;
+  position: relative;
 }
 
 a {
@@ -26,41 +26,34 @@ a:hover {
 }
 
 .card:hover {
-  transform: translate(0,-30px) scale(1.2);
+  transform: translate(0,-30px) scale(1.1);
   padding: 1rem;
   background-color: rgba(136, 131, 131, 0.856);
   transition: all 0.5s;
 }
 
-.card-title {
-  transition: all 0.5s;
+.button-with-alert:hover .alert {
+  display: block;
 }
-
-
 
 /* Top menu */
-nav a {
-  transform: translate(0, 0);
-  margin: auto;
-  transition: all 0.7s;
-}
-nav a:hover {
-  transform: translate(0, 3px) scale(1.2);
-  transition: all 0.4s;
+
+.nav-item {
+  margin: 0 1.2rem;
 }
 
+.nav-item:hover .navbar-text {
+  color: #000000;
+  transition: all 0.3s;
+}
 
 
 /* Home */
   
   /* products categories */
 
-#products-categories .card:hover .card-title {
-  transform: translate(0.5rem, 4.5rem);
-  transition: all 0.5s;
-}
-
-#products-categories .card:hover .card-body {
+#products-categories .card:hover .card-body h5 {
+  color: #ffffff;
   transition: all 0.5s;
 }
 

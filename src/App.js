@@ -14,7 +14,7 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Header from "./pages/home/Header";
+import Header from "./pages/home/Header"
 import Footer from "./pages/home/Footer"
 
 import Home from "./pages/Home"
@@ -39,18 +39,19 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
+          <div></div>
+
+          <Switch>
+            <Route exact path="/signin/" render={() => 
+              this.props.currentUser ? <Redirect to="/" /> : <SignIn />
+            } />
+            <Route path="/detail-product/" component={DetailProduct} />
+            <Route path="/products/" component={Products} />
+            <Route path="/payment" component={Payment}/>
+            <Route exact path="/" component={Home} />
+          </Switch>
           <Footer />
         </div>
-        
-        <Switch>
-          <Route exact path="/signin/" render={() => 
-            this.props.currentUser ? <Redirect to="/" /> : <SignIn />
-          } />
-          <Route path="/detail-product/" component={DetailProduct} />
-          <Route path="/products/" component={Products} />
-          <Route path="/payment" component={Payment}/>
-          <Route exact path="/" component={Home} />
-        </Switch>
       </Router>
     )
   }
