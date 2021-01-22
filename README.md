@@ -4,7 +4,7 @@ Frontend Project of Ecomerce PC shopping web made of REACTJS, BOOTSTRAP 4
 
 Deployed on Heroku
 
-link: https://huwngnosleep-pc-webshop.herokuapp.com/
+link: https://huwng-no-sleep-webshop.herokuapp.com/
 
 API server (just Get Data): https://mg5em.sse.codesandbox.io
 
