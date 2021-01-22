@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 
 import Header from "./pages/home/Header"
+import TopLayer from "./pages/home/TopLayer"
 import Footer from "./pages/home/Footer"
 
 import Home from "./pages/Home"
@@ -39,7 +40,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <div></div>
+          <TopLayer />
 
           <Switch>
             <Route exact path="/signin/" render={() => 

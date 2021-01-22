@@ -28,7 +28,7 @@ const Header = ({ currentUser }) => {
 
   return (
     <div>
-    <Navbar color="light" light expand="md">
+    <Navbar className="fixed-top" color="light" light expand="md">
       <Cart />
       <NavbarBrand>HuwngNoSleep</NavbarBrand>
       <NavbarToggler onClick={toggle}/>

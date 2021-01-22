@@ -19,7 +19,7 @@ const Cart = (props) => {
           <b>{`Cart: ${cartItems.length}`}</b>
         </Link>
       </span>
-      <Tooltip placement="bottom" isOpen={tooltipOpen} target="TooltipExample" toggle={toggle}>
+      <Tooltip placement="top" isOpen={tooltipOpen} target="TooltipExample" toggle={toggle}>
         <ul className="list-group">
           { 
             cartItems.length ? cartItems.map(

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component, useState }  from 'react'
 
 import {Container, Row, Col} from 'reactstrap'
 
@@ -6,16 +6,32 @@ import { addItem } from '../redux/cart/cart.actions'
 
 import { connect } from 'react-redux'
 
+import ToastAlert from '../components/Toast'
+
 class DetailProduct extends Component {
-  
-  alert() {
-    alert('Added new item to cart!')
+  constructor() {
+    super()
+    this.state = {
+      isHidden: true,
+    }
+
+  }
+
+  setHidden() {
+    this.setState({isHidden: !this.state.isHidden})
+    setTimeout(() => {
+      this.setState({isHidden: !this.state.isHidden}) 
+    }, 2000);
   }
   render() {
-    const {item} = this.props.location
+    const { item } = this.props.location
     const { addItem } = this.props
+
     return(
-      <Container className="pb-3">
+      <Container className="pb-3 position-relative">
+        {
+          this.state.isHidden ? null : <ToastAlert message="Added this item to cart!" />
+        }
         <Row>
           <Col sm="5" className="mt-2 d-flex flex-column justify-content-center">
             <img className="mw-100" src={item.img}/>
@@ -24,8 +40,13 @@ class DetailProduct extends Component {
             <h2>{item.name}</h2>
             <p>{item.productor}</p>
             <h3>{item.price}</h3>
-            
-            <button onClick={() => addItem(item)} className="btn btn-block btn-primary">Add to cart</button>
+            <button onClick={() => {
+                addItem(item)
+                this.setHidden.bind(this)()
+              } }
+              className="btn btn-block btn-primary">
+                Add to cart
+            </button>
           </Col>
           <Col sm="3" className="mt-2 d-flex flex-column justify-content-center">
             <ul className="list-group">

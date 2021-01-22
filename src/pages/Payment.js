@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Container, Row, Col} from 'reactstrap'
+import {Container, Row, Col, Button} from 'reactstrap'
 
 import { connect } from 'react-redux'
 
@@ -13,6 +13,11 @@ const Payment = ({ cartItems, delItem }) => {
             <Row>
                 <Col sm="6">
                     <h2>Cart</h2>
+                    {
+                        cartItems.length ? <p>{`TOTAL: ${cartItems.reduce((total, nextItem) => total + Number(nextItem.price.replace('$', '')), 0)}$`}</p>
+                        : 
+                        null
+                    }
                     { 
                         cartItems.length ? cartItems.map((item) => 
                             <Row class="card mb-5" style={{maxWidth: "540px"}}>
@@ -25,18 +30,14 @@ const Payment = ({ cartItems, delItem }) => {
                                             <h5 class="card-title">{item.name}</h5>
                                             <p class="card-text">{item.price}</p>
                                             <p class="card-text"><small class="text-muted">{item.productor}</small></p>
-                                            <button onClick={() => delItem(item)}>X</button>
+                                            <Button color="danger" onClick={() => delItem(item)}>X</Button>
                                         </div>
                                     </div>
                                 </div>
                             </Row> 
                         ) : <h5>You have no items in cart yet!</h5>
                     }
-                    {
-                        cartItems.length ? <p>{`TOTAL: ${cartItems.reduce((total, nextItem) => total + Number(nextItem.price.replace('$', '')), 0)}$`}</p>
-                        : 
-                        null
-                    }
+                    
                 </Col>
                 <Col className="pb-3" sm="6">
                     <h2>Payment</h2>
