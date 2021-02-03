@@ -7,7 +7,7 @@ Deployed on Heroku
 link: https://huwng-no-sleep-webshop.herokuapp.com/
 
 currently not have API server yet!
-so data is hard-coded on client-size
+so data is hard-coded on client-side
 
 Finished features:
 - By Jan 8, 2021: Basic features of an online shopping web: show products, cart,...
